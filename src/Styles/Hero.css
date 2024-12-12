@@ -1,0 +1,217 @@
+/* Hero Section */
+.hero-section {
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    position: relative;
+    overflow: hidden; /* Prevents overflow issues on certain screen sizes */
+}
+
+/* Text Section */
+.text-section {
+    width: 60%;
+    padding: 0 32px;
+    transition: transform 0.3s ease;
+}
+
+/* Headline */
+.text-headline {
+    margin-bottom: 12px;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.text-headline:hover {
+    opacity: 1; /* Highlight headline on hover */
+}
+
+/* Title */
+.text-title {
+    width: 500px;
+    color: #054789;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.text-title:hover {
+    color: #023c08; /* Change color on hover */
+}
+
+/* Description */
+.text-descritpion {
+    width: 475px;
+    margin: 32px 0;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+    line-height: 1.6rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.text-descritpion:hover {
+    color: #054789; /* Change color on hover */
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* Appointment Button */
+.text-appointment-btn {
+    padding: 14px 20px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #054789;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.4s ease, transform 0.2s ease;
+}
+
+.text-appointment-btn:hover {
+    color: #03284b;
+    background-color: transparent;
+    border: 1px solid #03284b;
+    transform: scale(1.05); /* Subtle scaling effect on hover */
+}
+
+/* Stats Section */
+.text-stats {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 48px;
+    transition: transform 0.3s ease;
+}
+
+.text-stats-container {
+    text-align: center;
+}
+
+.text-stats-container > p {
+    color: rgb(77, 75, 75);
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.7px;
+    transition: color 0.3s ease;
+}
+
+.text-stats-container p:first-child {
+    margin-bottom: 8px;
+    color: #03284b;
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Image Section */
+.hero-image-section {
+    width: 40%;
+    max-width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-image1 {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Round corners for the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+}
+
+/* Scroll Button */
+.scroll-up {
+    width: 45px;
+    height: 45px;
+    display: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: #375a7c;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 24px;
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.4s ease, transform 0.2s ease;
+}
+
+.scroll-up:hover {
+    transform: scale(1.1); /* Grow the button on hover */
+}
+
+.show-scroll {
+    display: flex;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .hero-image-section {
+        display: none;
+    }
+    .text-section {
+        width: 100%;
+        padding: 0;
+        transform: translateX(-20px);
+    }
+
+    .text-section:hover {
+        transform: translateX(0); /* Smooth animation when hovering over text section */
+    }
+
+    .text-title, .text-descritpion {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .text-headline {
+        font-size: 20px;
+    }
+
+    .text-title {
+        font-size: 28px;
+    }
+
+    .text-descritpion {
+        font-size: 16px;
+    }
+
+    .text-appointment-btn {
+        font-size: 16px;
+        padding: 12px 16px; /* Adjust button size for smaller screens */
+    }
+
+    .text-stats {
+        gap: 18px;
+    }
+
+    .text-stats-container > p {
+        font-size: 16px;
+    }
+
+    .text-stats-container p:first-child {
+        font-size: 22px;
+    }
+
+    .scroll-up {
+        bottom: 32px;
+        right: 32px;
+    }
+}

@@ -1,0 +1,265 @@
+/* Footer Section */
+.footer-section {
+    background-color: #1B2433;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden; /* Prevents overflow in case of content stretching */
+    color: white;
+}
+
+/* Footer Container */
+.footer-container {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 2px solid #293241;
+    border-radius: 2px;
+    transition: padding 0.3s ease;
+}
+
+/* Title */
+.ft-title {
+    color: #1A8EFD;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.ft-title:hover {
+    color: #1ECAB0; /* Color change on hover */
+}
+
+.ft-title > span {
+    position: relative;
+}
+
+.ft-title span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #054789;
+    border-radius: 8px;
+    left: 0;
+    bottom: -12px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.ft-title:hover span::before {
+    width: 50%;
+    background-color: #1A8EFD; /* Change underline color on hover */
+}
+
+/* Sign */
+.ft-sign {
+    color: #3fdcc5;
+    font-family: Cambria, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    transition: color 0.3s ease;
+}
+
+.ft-sign:hover {
+    color: #1A8EFD; /* Hover effect */
+}
+
+/* Description */
+.ft-description {
+    width: 420px;
+    margin: 16px 0 40px;
+    color: #D0D3DA;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    letter-spacing: .8px;
+    line-height: 1.7rem;
+    transition: color 0.3s ease;
+}
+
+.ft-description:hover {
+    color: #5485b6; /* Change color on hover */
+}
+
+/* Input Field Title */
+.ft-input-title {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+/* Input Field */
+.ft-input {
+    width: 300px;
+    margin: 20px 8px 0 0;
+    padding: 16px 22px;
+    color: white;
+    background-color: #293241;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    outline: transparent;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    letter-spacing: .8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ft-input:hover {
+    background-color: #3b4750; /* Darken background color on hover */
+    transform: scale(1.05); /* Subtle scale effect */
+}
+
+/* Button */
+.ft-btn {
+    padding: 14px 18px;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: transparent;
+    background-color: #1A8EFD;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.ft-btn:hover {
+    color: #1A8EFD;
+    background-color: white;
+    border: 2px solid #1A8EFD;
+    transform: scale(1.05); /* Button scaling on hover */
+}
+
+/* Lists */
+.ft-list-title {
+    margin: 16px 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-list-items {
+    list-style-type: none;
+}
+
+.ft-list-items li a {
+    text-decoration: none;
+    color: #a5a7ac;
+    padding: 0 0 2px 0;
+    border-bottom: 2px dotted transparent;
+    transition: border .2s ease, color 0.3s ease;
+}
+
+.ft-list-items li {
+    margin: 24px 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-list-items li a:hover {
+    border-bottom: 2px dotted #a5a7ac;
+    color: #1A8EFD; /* Change link color on hover */
+}
+
+/* Copyright Section */
+.ft-copyright {
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbcdd3;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    border-top: 2px solid #293241;
+    transition: padding 0.3s ease;
+}
+
+/* Social Links */
+.ft-social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.ft-social-links li a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #cbcdd3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ft-social-links li a svg {
+    width: 24px;
+    height: 24px;
+    padding: 1px;
+}
+
+.ft-social-links li a svg path {
+    fill: #cbcdd3;
+    transition: fill 0.3s ease;
+}
+
+.ft-social-links li a:hover {
+    border: 2px solid #1A8EFD;
+    background-color: #1A8EFD; /* Change background color on hover */
+}
+
+.ft-social-links li a:hover svg path {
+    fill: white; /* Change SVG color on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 700px) {
+    .footer-container {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ft-description {
+        width: 100%;
+        margin: 16px 0 24px;
+        font-size: 16px;
+    }
+
+    .ft-input {
+        width: 100%;
+        margin: 16px 0;
+    }
+
+    .ft-btn {
+        width: 100%;
+        margin: 0 0 16px;
+    }
+
+    .ft-copyright {
+        padding: 18px;
+        display: block;
+        text-align: center;
+    }
+
+    .ft-social-links {
+        margin: 16px 0 0;
+    }
+}

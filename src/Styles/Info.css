@@ -1,0 +1,164 @@
+/* Info Section */
+.info-section {
+    padding: 0 32px;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    overflow: hidden; /* Prevents any element overflow */
+}
+
+/* Title Section */
+.info-title-content {
+    margin: 64px 0 128px 0;
+}
+
+.info-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #054789;
+    position: relative;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.info-title:hover {
+    color: #023c08; /* Hover color for title */
+}
+
+.info-title > span {
+    position: relative;
+}
+
+.info-title span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #023c08;
+    border-radius: 8px;
+    left: 0;
+    bottom: -12px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+}
+
+.info-title:hover span::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Description Section */
+.info-description {
+    margin: 64px;
+    text-align: center;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.info-description:hover {
+    color: #043a6b; /* Color change on hover */
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* Cards Section */
+.info-cards-content {
+    margin: 64px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    position: relative;
+    transition: grid-template-columns 0.3s ease;
+}
+
+.info-cards {
+    height: auto;
+    border: 2px solid #d7d3d3;
+    border-radius: 12px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add depth with a shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-cards:hover {
+    transform: translateY(-8px); /* Subtle hover lift */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.info-card-title {
+    margin: 32px 0 40px 0;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease;
+}
+
+.info-card-title:hover {
+    color: #054789; /* Change color on hover */
+}
+
+.info-card-description {
+    margin: 24px;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.info-card-description:hover {
+    color: #4f97d1; /* Color change for card description on hover */
+}
+
+.info-card-icon {
+    position: absolute;
+    top: -24px;
+    left: 44%;
+    padding: 10px;
+    background-color: #DCE6FF;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.info-card-icon:hover {
+    transform: translateY(-5px); /* Icon lift effect on hover */
+    background-color: #2C96FF; /* Change background color */
+}
+
+.info-fa-icon {
+    color: #2C96FF;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.info-card-icon:hover .info-fa-icon {
+    color: white; /* Change icon color on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1000px) {
+    .info-description {
+        margin: 64px 32px;
+    }
+    .info-cards-content {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .info-description {
+        margin: 64px 8px;
+    }
+    .info-cards-content {
+        grid-template-columns: repeat(1, 1fr); /* Stack cards on mobile */
+    }
+}

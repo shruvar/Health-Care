@@ -1,0 +1,198 @@
+/* Doctor Section */
+.doctor-section {
+    padding: 32px;
+    margin: 0 0 32px 0;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for section */
+    transition: all 0.3s ease; /* Smooth transition for section */
+}
+
+.doctor-section:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Title */
+.dt-title-content {
+    margin: 0 0 50px 0;
+}
+
+.dt-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    color: #054789;
+    position: relative;
+    transition: color 0.3s ease; /* Transition for title color */
+}
+
+.dt-title > span {
+    position: relative;
+}
+
+.dt-title span::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #054789;
+    border-radius: 8px;
+    left: 0;
+    bottom: -12px;
+    transition: all 0.3s ease;
+}
+
+.dt-title:hover {
+    color: #023c08; /* Change color on hover */
+}
+
+.dt-title:hover span::before {
+    background-color: #023c08; /* Underline color change on hover */
+}
+
+/* Description */
+.dt-description {
+    margin: 64px auto 0;
+    text-align: center;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    letter-spacing: .8px;
+    line-height: 1.8rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.dt-description:hover {
+    color: #054789; /* Change color on hover */
+}
+
+/* Doctor Cards */
+.dt-cards-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.dt-card {
+    width: 332px;
+    height: 400px;
+    gap: 32px;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+    background-color: #fff;
+    border-radius: 12px; /* Rounded corners for cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Card shadow */
+    overflow: hidden; /* To ensure content doesn't overflow on rounded corners */
+    transition: all 0.3s ease;
+}
+
+.dt-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.dt-card-img {
+    width: 100%;
+    height: 275px;
+    padding: 16px 32px 0;
+    background-position: center;
+    background-color: #DDE5F8;
+    border-radius: 20px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.dt-card-img:hover {
+    transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+.dt-card-name {
+    margin: 12px 0 0 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    color: #453b3b;
+}
+
+.dt-card-title {
+    margin: 6px 0 8px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    letter-spacing: .7px;
+}
+
+.dt-card-stars {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    color: #9f8700; /* Gold color for stars */
+}
+
+.dt-card-reviews {
+    color: #5a5454;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .7px;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+    .dt-title {
+        font-size: 32px;
+    }
+
+    .dt-description {
+        margin: 48px 0 0;
+        font-size: 18px;
+    }
+
+    .dt-cards-content {
+        gap: 16px; /* Reduce gap between cards on smaller screens */
+    }
+
+    .dt-card {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .dt-card-img {
+        height: 200px; /* Adjust image height for mobile */
+    }
+
+    .dt-card-name {
+        font-size: 20px; /* Adjust name font size */
+    }
+
+    .dt-card-title {
+        font-size: 16px; /* Adjust title font size */
+    }
+
+    .dt-card-stars, .dt-card-reviews {
+        font-size: 16px; /* Adjust font size for stars and reviews */
+    }
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.doctor-section {
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect on section load */
+}
+
+/* Hover Effects on Stars */
+.dt-card-stars:hover {
+    color: #ffcc00; /* Highlight stars on hover */
+}
