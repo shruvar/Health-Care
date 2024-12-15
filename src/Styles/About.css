@@ -1,60 +1,114 @@
-/* About Section */
+/* About Section with Background Image */
 .about-section {
     padding: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    background-image: url('../../image.png'); /* Set background image here */
+    background-size: cover; /* Cover the section */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Optional: Keeps background fixed during scroll */
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
-.about-section:hover {
-    background: linear-gradient(to right, #FBFCFF, #ECF2FF); /* Subtle hover effect */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* Image */
+
+/* Image (for the content) */
 .about-image-content {
     width: 50%;
     max-width: 100%;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: imageFadeIn 1s ease-out; /* Fade-in animation for image */
+}
+
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-image-content:hover {
-    transform: scale(1.05); /* Image hover effect */
+    transform: scale(1.05); /* Image zoom effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
 .about-image1 {
     width: 80%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    border-radius: 12px; /* Rounded edges */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .about-image1:hover {
-    transform: scale(1.05); /* Image zoom on hover */
+    transform: scale(1.05); /* Zoom on hover */
 }
 
 /* Text Content */
 .about-text-content {
     width: 50%;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: textSlideIn 1s ease-out forwards; /* Slide in and fade for text */
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .about-text-content:hover {
-    opacity: 0.8;
-    transform: translateY(-10px); /* Slight text movement on hover */
+    opacity: 0.9;
+    transform: translateY(-5px); /* Slight upward movement on hover */
 }
 
+/* Title */
 .about-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 44px;
     font-weight: bold;
-    color: #054789;
+    color: #0e0048; /* Changed to black text */
     position: relative;
     margin-bottom: 16px;
+    animation: titleScale 1s ease-out;
+}
+
+@keyframes titleScale {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .about-title > span {
@@ -66,39 +120,72 @@
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: #054789;
+    background-color: #0e0048; /* Line matches the title color */
     border-radius: 8px;
     left: 0;
     bottom: -12px;
     transition: all 0.3s ease-in-out;
 }
 
-.about-title:hover span::before {
-    background-color: #054789; /* Change line color on hover */
-}
 
+/* Description */
 .about-description {
     margin: 32px 0;
-    color: #4d4b4b;
+    color: #000000; /* Changed to black text */
     font-family: 'Rubik', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: .7px;
-    line-height: 1.7rem;
-    text-align: justify; /* Improve text alignment */
+    line-height: 1.8rem;
+    text-align: justify;
+    animation: fadeIn 1s ease forwards;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Subtitle */
 .about-text-title {
     margin-bottom: 24px;
-    color: #054789;
+    color: #000000; /* Changed to black text */
     font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     letter-spacing: .7px;
+    animation: fadeInUp 1s ease-out;
 }
 
-/* Steps */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Steps Section */
 .about-text-step {
-    margin: 16px 0;
+    margin: 20px 0;
+    animation: stepFadeIn 1.2s ease-out;
+}
+
+@keyframes stepFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-text-sTitle {
@@ -106,26 +193,50 @@
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .7px;
-    color: #333;
+    color: #000000; /* Changed to black text */
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-text-description {
     margin: 8px 24px;
-    color: #4d4b4b;
+    color: #000000; /* Changed to black text */
     font-family: 'Rubik', sans-serif;
     letter-spacing: .7px;
     line-height: 1.6rem;
+    animation: fadeIn 1s ease-out forwards;
 }
 
 /* Icon Style */
 .fa-icon {
-    color: #054789;
-    font-size: 24px;
-    transition: color 0.3s ease;
+    color: #2980b9; /* Accent blue for icons */
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: iconBounce 1.5s ease-in-out infinite;
 }
 
 .fa-icon:hover {
-    color: #023c08; /* Hover effect on icon */
+    color: #055b29; /* Green hover effect */
+    transform: scale(1.2);
+}
+
+/* Performance Considerations: Disable animations for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .about-section,
+    .about-image-content,
+    .about-text-content {
+        animation: none; /* Disable animations */
+    }
 }
 
 /* Responsive Styles */
@@ -143,7 +254,7 @@
     .about-image1 {
         width: 100%;
         height: auto;
-        margin-bottom: 16px; /* Add space below the image */
+        margin-bottom: 16px;
     }
 
     .about-text-content {
@@ -154,26 +265,26 @@
 /* Mobile Responsiveness - Further Optimizations */
 @media screen and (max-width: 600px) {
     .about-title {
-        font-size: 28px; /* Smaller title for mobile */
+        font-size: 32px;
     }
 
     .about-description {
-        font-size: 16px; /* Smaller text for mobile */
+        font-size: 16px;
     }
 
     .about-text-title {
-        font-size: 22px; /* Adjust text title for smaller screens */
+        font-size: 22px;
     }
 
     .about-text-sTitle {
-        font-size: 16px; /* Adjust step title for mobile */
+        font-size: 16px;
     }
 
     .about-text-description {
-        font-size: 14px; /* Smaller step description for mobile */
+        font-size: 14px;
     }
 
     .fa-icon {
-        font-size: 20px; /* Adjust icon size for small devices */
+        font-size: 22px;
     }
 }

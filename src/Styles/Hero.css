@@ -1,217 +1,327 @@
 /* Hero Section */
 .hero-section {
-    padding: 32px;
+    padding: 120px 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    gap: 100px;
+    background: linear-gradient(135deg, #87CEEB, #00BFFF, #1E90FF);
     position: relative;
-    overflow: hidden; /* Prevents overflow issues on certain screen sizes */
+    overflow: hidden;
+    animation: fadeInHero 3s ease-out;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Circles and Dynamic Effects */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: floatingCircles 6s ease-in-out infinite;
+}
+
+.hero-section::before {
+    left: 5%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.hero-section::after {
+    right: 5%;
+    animation-duration: 6s;
+    animation-delay: 3s;
 }
 
 /* Text Section */
 .text-section {
-    width: 60%;
-    padding: 0 32px;
-    transition: transform 0.3s ease;
+    width: 50%;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    animation: slideInText 2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* Headline */
 .text-headline {
-    margin-bottom: 12px;
-    color: rgb(77, 75, 75);
-    font-family: 'Rubik', sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 0.7px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    margin-bottom: 30px;
+    color: #4682B4;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: transform 0.4s ease, letter-spacing 0.3s ease;
+    animation: slideInLeft 1.8s ease-out;
 }
 
 .text-headline:hover {
-    opacity: 1; /* Highlight headline on hover */
+    letter-spacing: 5px;
+    transform: translateX(15px);
+    opacity: 1;
 }
 
 /* Title */
 .text-title {
-    width: 500px;
-    color: #054789;
+    color: #1E90FF;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 2s ease-out;
 }
 
-.text-title:hover {
-    color: #023c08; /* Change color on hover */
-}
+
+
 
 /* Description */
 .text-descritpion {
-    width: 475px;
-    margin: 32px 0;
-    color: rgb(77, 75, 75);
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.7px;
-    line-height: 1.6rem;
+    margin: 40px 0;
+    color: #5F9EA0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.8rem;
     transition: color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 2.3s ease-out;
 }
 
-.text-descritpion:hover {
-    color: #054789; /* Change color on hover */
-    transform: translateY(-5px); /* Subtle lift effect */
-}
 
 /* Appointment Button */
 .text-appointment-btn {
-    padding: 14px 20px;
+    padding: 18px 40px;
     color: white;
-    border: 1px solid transparent;
-    border-radius: 28px;
+    border: 3px solid transparent;
+    border-radius: 50px;
     outline: transparent;
-    background-color: #054789;
-    font-size: 18px;
-    font-family: 'Rubik', sans-serif;
-    letter-spacing: 0.8px;
+    background-color: #00BFFF;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 1.5px;
     cursor: pointer;
-    transition: all 0.4s ease, transform 0.2s ease;
+    transition: all 0.5s ease, transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    animation: pulse 2.5s ease-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.text-appointment-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-out;
 }
 
 .text-appointment-btn:hover {
-    color: #03284b;
+    color: #003366;
     background-color: transparent;
-    border: 1px solid #03284b;
-    transform: scale(1.05); /* Subtle scaling effect on hover */
+    border: 3px solid #003366;
+    transform: scale(1.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.text-appointment-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Stats Section */
 .text-stats {
-    margin-top: 40px;
+    margin-top: 60px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 48px;
-    transition: transform 0.3s ease;
+    gap: 70px;
+    transition: transform 0.4s ease;
 }
 
 .text-stats-container {
     text-align: center;
+    animation: fadeIn 2s ease-out;
 }
 
 .text-stats-container > p {
-    color: rgb(77, 75, 75);
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.7px;
+    color: #5F9EA0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
     transition: color 0.3s ease;
 }
 
 .text-stats-container p:first-child {
-    margin-bottom: 8px;
-    color: #03284b;
-    font-family: 'Rubik', sans-serif;
-    font-size: 32px;
+    margin-bottom: 15px;
+    color: #052f59;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
     font-weight: bold;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 /* Image Section */
 .hero-image-section {
-    width: 40%;
+    width: 35%;
     max-width: 100%;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, opacity 0.5s ease;
+    animation: fadeInRight 2.2s ease-out;
+    position: relative;
 }
 
 .hero-image1 {
     width: 100%;
     height: auto;
-    border-radius: 15px; /* Round corners for the image */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-image1:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    animation: imageHover 0.5s ease-out;
 }
 
 /* Scroll Button */
 .scroll-up {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     display: none;
     align-items: center;
-    text-align: center;
     justify-content: center;
     color: white;
-    border: 3px solid white;
+    border: 5px solid white;
     border-radius: 50%;
-    background-color: #375a7c;
+    background-color: #1E90FF;
     position: fixed;
-    bottom: 50px;
-    right: 50px;
-    font-size: 24px;
+    bottom: 60px;
+    right: 60px;
+    font-size: 32px;
     z-index: 20;
     cursor: pointer;
-    transition: all 0.4s ease, transform 0.2s ease;
+    transition: all 0.5s ease, transform 0.3s ease;
+    animation: fadeInUp 3.5s ease-out;
 }
 
 .scroll-up:hover {
-    transform: scale(1.1); /* Grow the button on hover */
+    transform: scale(1.2);
+    background-color: #00BFFF;
 }
 
 .show-scroll {
     display: flex;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 900px) {
-    .hero-image-section {
-        display: none;
-    }
-    .text-section {
-        width: 100%;
-        padding: 0;
-        transform: translateX(-20px);
-    }
+/* Keyframes Animations */
 
-    .text-section:hover {
-        transform: translateX(0); /* Smooth animation when hovering over text section */
+/* Fade In Hero Section */
+@keyframes fadeInHero {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
     }
-
-    .text-title, .text-descritpion {
-        width: 100%;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media screen and (max-width: 600px) {
-    .text-headline {
-        font-size: 20px;
+/* Floating Circles */
+@keyframes floatingCircles {
+    0% {
+        transform: translateY(0);
     }
-
-    .text-title {
-        font-size: 28px;
+    50% {
+        transform: translateY(60px);
     }
-
-    .text-descritpion {
-        font-size: 16px;
+    100% {
+        transform: translateY(0);
     }
+}
 
-    .text-appointment-btn {
-        font-size: 16px;
-        padding: 12px 16px; /* Adjust button size for smaller screens */
+/* Slide In Text */
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
     }
-
-    .text-stats {
-        gap: 18px;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    .text-stats-container > p {
-        font-size: 16px;
+/* Slide In for Headline */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
     }
-
-    .text-stats-container p:first-child {
-        font-size: 22px;
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
+}
 
-    .scroll-up {
-        bottom: 32px;
-        right: 32px;
+/* Fade-In Up for Title and Description */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image Hover Effect */
+@keyframes imageHover {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Fade In Right for Image */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Twinkle Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
     }
 }

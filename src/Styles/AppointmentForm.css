@@ -4,24 +4,27 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adding a soft shadow */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    background: linear-gradient(135deg, #ECF2FF, #FBFCFF); /* Diagonal gradient for more depth */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out; /* Smooth transition for hover effects */
 }
 
 .form-container:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+    transform: translateY(-5px); /* Slight lift on hover for a more interactive feel */
 }
 
 /* Form Title */
 .form-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
     color: #054789;
     position: relative;
     margin-bottom: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 .form-title > span {
@@ -40,8 +43,12 @@
     transition: all 0.3s ease-in-out;
 }
 
+.form-title:hover {
+    color: #2980b9; /* Change title color on hover */
+}
+
 .form-title:hover span::before {
-    background-color: #023c08; /* Change underline color on hover */
+    background-color: #2980b9; /* Change underline color on hover */
 }
 
 /* Form Inputs and Labels */
@@ -49,9 +56,10 @@
     margin: 0 0 16px 0;
     display: block;
     font-family: 'Rubik', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: .7px;
     color: #333;
+    transition: all 0.3s ease;
 }
 
 .form-content label::before {
@@ -75,13 +83,14 @@
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     letter-spacing: .7px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease, box-shadow 0.3s ease;
 }
 
 /* Focus Effect on Inputs */
 .form-content :is(input, select):focus {
     border-color: #1A8EFD;
     background-color: #e6f0ff; /* Light background on focus */
+    box-shadow: 0 0 10px rgba(26, 143, 253, 0.3); /* Soft glow around the input on focus */
 }
 
 /* Success Message */
@@ -93,12 +102,9 @@
     letter-spacing: .7px;
     line-height: 1.7rem;
     font-weight: bold;
-    transition: opacity 0.3s ease;
-}
-
-.success-message.hidden {
     opacity: 0;
     visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 /* Error Message */
@@ -110,6 +116,28 @@
     line-height: 1.7rem;
     font-weight: bold;
     margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Subtle animations for form focus and error success messages */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect on Input Fields */
+.form-content :is(input, select):hover {
+    border-color: #1A8EFD;
+    background-color: #e6f0ff; /* Light blue background on hover */
+    box-shadow: 0 0 8px rgba(26, 143, 253, 0.3); /* Light shadow on hover */
 }
 
 /* Responsive Styles */
@@ -141,17 +169,24 @@
     }
 }
 
-/* Add subtle animations for form focus and error success messages */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Custom Button (if needed) */
+.form-button {
+    padding: 12px 24px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    background-color: #1A8EFD;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.success-message,
-.error-message {
-    animation: fadeIn 0.5s ease-in-out;
+.form-button:hover {
+    background-color: #0b74e5; /* Slightly darker blue */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.form-button:active {
+    transform: scale(0.98); /* Pressed effect */
 }

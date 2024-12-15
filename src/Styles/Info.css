@@ -1,15 +1,39 @@
+/* Global Animations */
+
+/* Subtle fade-in effect for the whole section */
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Info Section */
 .info-section {
     padding: 0 32px;
     text-align: center;
     background-color: white;
     position: relative;
-    overflow: hidden; /* Prevents any element overflow */
+    overflow: hidden;
+    background: linear-gradient(135deg, #e1f5fe, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInSection 1s ease-out; /* Fade-in animation */
+}
+
+/* Info Section Hover Effect */
+.info-section:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 
 /* Title Section */
 .info-title-content {
     margin: 64px 0 128px 0;
+    position: relative;
 }
 
 .info-title {
@@ -17,13 +41,14 @@
     font-size: 40px;
     font-weight: bold;
     color: #054789;
-    position: relative;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for title */
 }
 
 .info-title:hover {
     color: #023c08; /* Hover color for title */
+    transform: translateY(-5px); /* Slight upward movement */
 }
 
 .info-title > span {
@@ -58,12 +83,13 @@
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.8rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .info-description:hover {
     color: #043a6b; /* Color change on hover */
     transform: translateY(-5px); /* Subtle lift effect */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for description */
 }
 
 /* Cards Section */
@@ -76,21 +102,24 @@
     transition: grid-template-columns 0.3s ease;
 }
 
+/* Info Cards */
 .info-cards {
     height: auto;
     border: 2px solid #d7d3d3;
     border-radius: 12px;
     background-color: white;
     position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add depth with a shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f0f8ff, #ffffff); /* Subtle card gradient */
+    transition: all 0.3s ease; /* Removed animations */
 }
 
+/* Hover Effect on Cards: Removed */
 .info-cards:hover {
-    transform: translateY(-8px); /* Subtle hover lift */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    background-color: #f3faff; /* Light hover effect for background */
 }
 
+/* Info Card Title */
 .info-card-title {
     margin: 32px 0 40px 0;
     color: black;
@@ -101,10 +130,13 @@
     transition: color 0.3s ease;
 }
 
+/* Info Card Title Hover Effect */
 .info-card-title:hover {
     color: #054789; /* Change color on hover */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
 
+/* Info Card Description */
 .info-card-description {
     margin: 24px;
     color: rgb(77, 75, 75);
@@ -112,13 +144,16 @@
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Info Card Description Hover Effect */
 .info-card-description:hover {
     color: #4f97d1; /* Color change for card description on hover */
+    transform: translateY(-3px); /* Subtle hover effect */
 }
 
+/* Info Card Icon */
 .info-card-icon {
     position: absolute;
     top: -24px;
@@ -126,20 +161,25 @@
     padding: 10px;
     background-color: #DCE6FF;
     border-radius: 30px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for icon */
 }
 
+/* Icon Hover Animation */
 .info-card-icon:hover {
     transform: translateY(-5px); /* Icon lift effect on hover */
     background-color: #2C96FF; /* Change background color */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow effect */
 }
 
+/* Icon Color Change on Hover */
 .info-fa-icon {
     color: #2C96FF;
     font-size: 24px;
     transition: color 0.3s ease;
 }
 
+/* Icon color change when hovering over the icon */
 .info-card-icon:hover .info-fa-icon {
     color: white; /* Change icon color on hover */
 }
@@ -150,7 +190,7 @@
         margin: 64px 32px;
     }
     .info-cards-content {
-        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
     }
 }
 
@@ -159,6 +199,6 @@
         margin: 64px 8px;
     }
     .info-cards-content {
-        grid-template-columns: repeat(1, 1fr); /* Stack cards on mobile */
+        grid-template-columns: repeat(1, 1fr); /* Single column layout for smaller screens */
     }
 }

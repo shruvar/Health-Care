@@ -1,10 +1,13 @@
 /* Footer Section */
 .footer-section {
     background-color: #1B2433;
-    padding: 40px 0;
+    padding: 60px 0;
     position: relative;
-    overflow: hidden; /* Prevents overflow in case of content stretching */
+    overflow: hidden;
     color: white;
+    border-top: 2px solid #293241;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    font-family: 'Rubik', sans-serif;
 }
 
 /* Footer Container */
@@ -14,10 +17,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 32px;
     border-bottom: 2px solid #293241;
-    border-radius: 2px;
+    border-radius: 15px;
     transition: padding 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Title */
@@ -27,13 +31,16 @@
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
-    letter-spacing: .8px;
+    letter-spacing: 1px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .ft-title:hover {
-    color: #1ECAB0; /* Color change on hover */
+    color: #1ECAB0;
+    transform: scale(1.05);
 }
 
 .ft-title > span {
@@ -54,7 +61,7 @@
 
 .ft-title:hover span::before {
     width: 50%;
-    background-color: #1A8EFD; /* Change underline color on hover */
+    background-color: #1A8EFD;
 }
 
 /* Sign */
@@ -63,12 +70,13 @@
     font-family: Cambria, sans-serif;
     font-size: 40px;
     font-weight: bold;
-    letter-spacing: .8px;
-    transition: color 0.3s ease;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .ft-sign:hover {
-    color: #1A8EFD; /* Hover effect */
+    color: #1A8EFD;
+    transform: scale(1.05);
 }
 
 /* Description */
@@ -80,11 +88,12 @@
     font-size: 20px;
     letter-spacing: .8px;
     line-height: 1.7rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .ft-description:hover {
-    color: #5485b6; /* Change color on hover */
+    color: #5485b6;
+    transform: translateY(5px);
 }
 
 /* Input Field Title */
@@ -109,12 +118,13 @@
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     letter-spacing: .8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ft-input:hover {
-    background-color: #3b4750; /* Darken background color on hover */
-    transform: scale(1.05); /* Subtle scale effect */
+    background-color: #3b4750;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Button */
@@ -129,14 +139,14 @@
     font-family: 'Rubik', sans-serif;
     letter-spacing: .8px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease, transform 0.2s ease;
 }
 
 .ft-btn:hover {
     color: #1A8EFD;
     background-color: white;
     border: 2px solid #1A8EFD;
-    transform: scale(1.05); /* Button scaling on hover */
+    transform: scale(1.1);
 }
 
 /* Lists */
@@ -170,7 +180,7 @@
 
 .ft-list-items li a:hover {
     border-bottom: 2px dotted #a5a7ac;
-    color: #1A8EFD; /* Change link color on hover */
+    color: #1A8EFD;
 }
 
 /* Copyright Section */
@@ -186,6 +196,7 @@
     letter-spacing: .8px;
     border-top: 2px solid #293241;
     transition: padding 0.3s ease;
+    animation: copyrightFadeIn 1s ease-in-out;
 }
 
 /* Social Links */
@@ -194,19 +205,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .ft-social-links li a {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid #cbcdd3;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
 }
 
 .ft-social-links li a svg {
@@ -222,11 +233,12 @@
 
 .ft-social-links li a:hover {
     border: 2px solid #1A8EFD;
-    background-color: #1A8EFD; /* Change background color on hover */
+    background-color: #1A8EFD;
+    transform: scale(1.1);
 }
 
 .ft-social-links li a:hover svg path {
-    fill: white; /* Change SVG color on hover */
+    fill: white;
 }
 
 /* Responsive Design */
@@ -263,3 +275,50 @@
         margin: 16px 0 0;
     }
 }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes copyrightFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Additional Enhancements */
+.footer-container a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-container a:hover {
+    color: #1A8EFD;
+    transform: translateY(-2px);
+}
+
+.ft-social-links li a {
+    transition: box-shadow 0.3s ease;
+}
+
+.ft-social-links li a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects for Footer Sections */
+.footer-section:hover {
+    background-color: #293241;
+}
+

@@ -1,51 +1,68 @@
 /* BA Section */
 .ba-section {
-    padding: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 40px; /* Increased gap for a more spacious layout */
+    padding: 40px;
     background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease; /* Smooth transition for the section */
-    border-radius: 8px; /* Rounded corners for the container */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the section */
 }
 
 .ba-section:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    transform: scale(1.03) rotateY(3deg); /* Slight zoom and 3D rotation */
 }
 
 /* Image */
 .ba-image-content {
-    width: 50%;
+    width: 100%;
     max-width: 100%;
     text-align: center;
-    transition: transform 0.3s ease-in-out; /* Smooth image scaling effect */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
 }
 
 .ba-image-content:hover {
-    transform: scale(1.05); /* Slight scale effect on hover for image */
+    opacity: 1;
 }
 
+/* Image Style */
 .ba-image1 {
-    width: 80%;
+    width: 100%; /* Changed to 100% for responsiveness */
     height: auto;
-    border-radius: 10px; /* Rounded corners for image */
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.ba-image1:hover {
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
 /* Text */
 .ba-text-content {
-    width: 50%;
+    padding: 20px;
 }
 
+/* Title */
 .ba-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-size: 36px; /* Reduced to fit better in the layout */
     font-weight: bold;
-    letter-spacing: .7px;
     color: #054789;
-    position: relative;
-    margin-bottom: 16px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ba-title:hover {
+    color: #023c08; /* Hover color for title */
+    transform: translateY(-3px); /* Slight upward movement */
 }
 
 .ba-title > span {
@@ -57,15 +74,28 @@
     position: absolute;
     width: 100%;
     height: 4px;
-    background-color: #054789;
+    background-color: #023c08;
     border-radius: 8px;
     left: 0;
     bottom: -12px;
-    transition: all 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
 }
 
 .ba-title:hover span::before {
-    background-color: #023c08; /* Underline color change on hover */
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(-5px); }
+    40% { transform: translateY(0); }
+    60% { transform: translateY(-3px); }
+    80% { transform: translateY(0); }
+    100% { transform: translateY(-2px); }
 }
 
 /* Description */
@@ -74,13 +104,16 @@
     color: #4d4b4b;
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
-    letter-spacing: .8px;
+    letter-spacing: 0.8px;
     line-height: 1.8rem;
     transition: all 0.3s ease;
 }
 
+/* Hover effect for description */
 .ba-description:hover {
-    color: #054789; /* Hover effect for description text */
+    color: #054789;
+    transform: translateX(10px);
+    /* Removed text-shadow */
 }
 
 /* Checks */
@@ -89,13 +122,16 @@
     font-family: 'Rubik', sans-serif;
     font-size: 22px;
     font-weight: bold;
-    letter-spacing: .7px;
     color: #333;
-    transition: color 0.3s ease;
+    letter-spacing: 0.7px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for checks */
 .ba-checks:hover {
-    color: #054789; /* Change color on hover */
+    color: #054789;
+    transform: translateX(5px);
+    /* Removed text-shadow */
 }
 
 .ba-check-first {
@@ -112,31 +148,32 @@
     color: white;
     border: 1px solid transparent;
     border-radius: 50px;
-    outline: transparent;
     background-color: #1A8EFD;
     font-size: 20px;
     font-family: 'Rubik', sans-serif;
-    letter-spacing: .8px;
     cursor: pointer;
-    transition: all .4s ease;
+    transition: all 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .ba-appointment-btn:hover {
     color: #1A8EFD;
     background-color: transparent;
     border: 1px solid #1A8EFD;
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive */
+/* Responsive Design */
 @media screen and (max-width: 1000px) {
     .ba-section {
-        display: block;
+        grid-template-columns: 1fr; /* One column layout for smaller screens */
+        padding: 16px;
     }
 
     .ba-image-content {
         width: 100%;
-        max-width: 100%;
-        margin: 0 0 32px 0;
+        margin-bottom: 16px;
     }
 
     .ba-text-content {
@@ -145,19 +182,18 @@
 
     .ba-image1 {
         width: 100%;
-        height: auto;
     }
 
     .ba-title {
-        font-size: 32px; /* Smaller font for title on mobile */
+        font-size: 32px; /* Slightly smaller title for medium screens */
     }
 
     .ba-description {
-        font-size: 16px; /* Adjust description font size for smaller screens */
+        font-size: 16px;
     }
 
     .ba-appointment-btn {
-        padding: 14px 20px; /* Smaller padding on button for mobile */
+        padding: 14px 20px;
         font-size: 18px;
     }
 }
@@ -166,17 +202,14 @@
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
 .ba-section {
-    animation: fadeIn 1s ease-in-out; /* Fade-in effect for the section */
-}
-
-/* Additional Hover Effects */
-.ba-title:hover {
-    color: #023c08; /* Change title color on hover */
+    animation: fadeIn 1s ease-in-out;
 }
