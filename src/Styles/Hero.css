@@ -84,9 +84,6 @@
     animation: fadeInUp 2s ease-out;
 }
 
-
-
-
 /* Description */
 .text-descritpion {
     margin: 40px 0;
@@ -323,5 +320,87 @@
     }
     50% {
         opacity: 1;
+    }
+}
+
+/* Responsive Media Queries */
+
+/* For tablets and small desktops (up to 1024px) */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 80px 40px;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .text-section {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .text-title {
+        font-size: 30px;
+    }
+
+    .text-appointment-btn {
+        font-size: 20px;
+    }
+
+    .text-stats {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-image-section {
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .scroll-up {
+        bottom: 40px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* For mobile devices (up to 600px) */
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 60px 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .text-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .text-title {
+        font-size: 24px;
+    }
+
+    .text-headline {
+        font-size: 18px;
+    }
+
+    .text-descritpion {
+        font-size: 16px;
+    }
+
+    .text-appointment-btn {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+
+    .hero-image-section {
+        width: 100%;
+    }
+
+    .scroll-up {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }

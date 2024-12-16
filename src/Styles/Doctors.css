@@ -123,7 +123,6 @@
 
 .dt-card-img:hover {
     transform: scale(1.1);
-    filter: brightness(1.2);
 }
 
 /* Center the Doctor's Name and Title */
